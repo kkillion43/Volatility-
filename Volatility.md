@@ -45,7 +45,7 @@ tVol <- sd(tRet) * sqrt(250) * 100
 ```
 
 ###Create a function here to get a continous look back of volatility over time
-* d = exponentially weighted window*
+*d = exponentially weighted window*
 
 
 ```r
