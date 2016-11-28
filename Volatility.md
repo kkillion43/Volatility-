@@ -75,7 +75,7 @@ tVol2 <- Vol(60, tRet)
 tVol3 <- Vol(200, tRet)
 ```
 
-#Lets plot them to get a visual of what it looks like
+###Lets plot them to get a visual of what it looks like
 
 ```r
 plot(hlfVol, main="Herbalife Volatility", xlab="Time", ylab="volatility", type='l', col='blue')
