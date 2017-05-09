@@ -2,7 +2,7 @@
 Kyle Killion  
 July 10, 2016  
 
-###load "tseries" to easily get and analyze volatility Data
+### Load "tseries" to easily get and analyze volatility Data
 
 ```r
 library(tseries)
@@ -13,7 +13,7 @@ library(tseries)
 ```
 
 
-###Downloading Daily on close data as hlfData and tData
+### Downloading Daily on close data as hlfData and tData
 *Tickers = Herbalife and At&t*
 
 
@@ -29,7 +29,7 @@ hlfData <- get.hist.quote('hlf', quote="Close")
 tData <- get.hist.quote('t', quote='Close')
 ```
 
-###Get the log returns of hlfData and tData
+### Get the log returns of hlfData and tData
 
 ```r
 hlfRet <- log(lag(hlfData)) - log(hlfData)
@@ -44,7 +44,7 @@ hlfVol <- sd(hlfRet) * sqrt(250) * 100
 tVol <- sd(tRet) * sqrt(250) * 100
 ```
 
-###Create a function here to get a continous look back of volatility over time
+### Create a function here to get a continous look back of volatility over time
 *d = exponentially weighted window*
 
 
@@ -64,7 +64,7 @@ Vol <- function(d, logrets){
 ```
 
 
-###We run some different weighted windows 
+### We run some different weighted windows 
 
 ```r
 hlfVol <- Vol(5, hlfRet)
@@ -75,7 +75,7 @@ tVol2 <- Vol(60, tRet)
 tVol3 <- Vol(200, tRet)
 ```
 
-###Lets plot them to get a visual of what it looks like
+### Lets plot them to get a visual of what it looks like
 
 ```r
 plot(hlfVol, main="Herbalife Volatility", xlab="Time", ylab="volatility", type='l', col='blue')
